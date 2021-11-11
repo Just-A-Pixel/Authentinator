@@ -1,0 +1,14 @@
+{
+  "name": "iwp-backend",
+  "version": "1.0.0",
+  "description": "Backend for ecommerce site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raj Anand",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
