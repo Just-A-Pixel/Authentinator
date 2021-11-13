@@ -1,0 +1,34 @@
+# TESTING
+
+GET http://localhost:8080
+
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+    "name": "raj"
+}
+
+###
+
+
+# Clothes
+GET http://localhost:8080/api/clothes
+
+
+###
+POST http://localhost:8080/api/clothes
+Content-Type: application/json
+
+ {
+    "gender": "M",
+    "name": "Belt",
+    "new": true,
+    "sale": {
+      "begin": true,
+      "discount": 50
+    }
+  }
