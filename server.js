@@ -21,13 +21,14 @@ db.on("error", (error) => {
 });
 
 db.once("open", () => console.log("Connected to database"));
+
+
 app.get("/", (req, res) => {
   console.log(req.body);
+  res.json({message: "connected"})
 });
 
-app.post("/", (req, res) => {
-  res.json(req.body);
-});
+
 
 app.listen(process.env.PORT || port, () => {
   console.log(`Server listening on https://localhost:${port}`);
