@@ -4,9 +4,10 @@ const express = require("express");
 const clothes = require("./routes/clothes");
 const auth = require("./routes/auth");
 const mongoose = require("mongoose");
-
+const cors = require("cors")
 const app = express();
 
+app.use(cors())
 app.use(express.json());
 app.use("/api/clothes", clothes);
 app.use("/api/auth", auth);
