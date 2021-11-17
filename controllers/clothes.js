@@ -56,7 +56,7 @@ const filterByNew = async (req, res) => {
 
 const filterBySale = async (req, res) => {
   try {
-    const data = await clothSchema.find({"sale": {"begin": true}});
+    const data = await clothSchema.find({sale: {begin: true}});
     res.json(data);
   } catch (err) {
     console.log(err);

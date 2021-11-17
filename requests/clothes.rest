@@ -1,34 +1,28 @@
-# TESTING
-
-GET http://localhost:8080
-
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-    "name": "raj"
-}
-
-###
-
-
-# Clothes
-GET http://localhost:8080/api/clothes
-
-
-###
 POST http://localhost:8080/api/clothes
 Content-Type: application/json
 
  {
     "gender": "M",
-    "name": "Belt",
-    "new": true,
+    "name": "Toothbrush2",
+    "new": false,
     "sale": {
-      "begin": true,
+      "begin": false,
       "discount": 50
     }
   }
+
+###
+
+GET http://localhost:8080/api/clothes
+
+###
+GET http://localhost:8080/api/clothes/male
+
+###
+GET http://localhost:8080/api/clothes/female
+
+###
+GET http://localhost:8080/api/clothes/new
+
+###
+GET http://localhost:8080/api/clothes/sale
