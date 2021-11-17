@@ -1,21 +1,5 @@
 const userSchema = require("../models/users");
-
-const checkUserExist = async (req, res, next) => {
-  let users;
-  try {
-    users = await userSchema.find({ username: req.body.username });
-
-    if (users.length == 0) {
-      req.body.userExists = false;
-    } else {
-      req.body.userExists = true;
-    }
-
-    next();
-  } catch (err) {
-    console.log(err);
-  }
-};
+const cartSchema = require("../models/cart");
 
 const signUp = async (req, res) => {
   if (req.body.userExists == true) {
@@ -28,13 +12,20 @@ const signUp = async (req, res) => {
     username: username,
     password: password,
   });
+
+  const newCart = new cartSchema({
+    _id: req.body.username,
+    items: req.body.items,
+  });
+
   try {
     const data = await newUser.save();
-    res.send(data);
+    // res.send(data);
     console.log("User Created");
+    data = await newCart.save();
+    console.log("Cart Created");
   } catch (err) {
     res.status(500).send(err);
-    console.log("User could not be created");
   }
 };
 
@@ -47,10 +38,10 @@ const login = async (req, res) => {
       password: req.body.password,
     });
 
-    res.send({user: req.body.username})
+    res.send({ user: req.body.username });
   } catch (err) {
-      console.log({message: err})
+    console.log({ message: err });
   }
 };
 
-module.exports = { checkUserExist, signUp, login };
+module.exports = { signUp, login };

@@ -1,0 +1,14 @@
+GET http://localhost:8080/api/cart
+
+###
+
+POST http://localhost:8080/api/cart
+Content-Type: application/json
+
+{
+    "_id": "raj",
+    "items": [{"name":"belt"}, {"name": "band"}]
+}
+
+###
+GET http://localhost:8080/api/cart/raj

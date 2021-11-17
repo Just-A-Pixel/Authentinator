@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const clothes = require("./routes/clothes");
 const auth = require("./routes/auth");
+const cart = require("./routes/cart")
 const mongoose = require("mongoose");
 const cors = require("cors")
 const app = express();
@@ -11,6 +12,7 @@ app.use(cors())
 app.use(express.json());
 app.use("/api/clothes", clothes);
 app.use("/api/auth", auth);
+app.use("/api/cart", cart)
 
 const port = 8080;
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });

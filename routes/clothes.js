@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const { getClothes, addClothesDB } = require("../controllers/clothes");
+const {getClothes, addClothesDB, filterByMale, filterByFemale, filterByNew, filterBySale} = require("../controllers/clothes");
 
-router.get("/", getClothes);
 router.post("/", addClothesDB);
-
-// TODO:
-// Make filter
-
+router.get("/", getClothes);
+router.get("/male", filterByMale);
+router.get("/female", filterByFemale);
+router.get("/new", filterByNew);
+router.get("/sale", filterBySale);
 
 module.exports = router;

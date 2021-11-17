@@ -10,7 +10,6 @@ const getClothes = async (req, res) => {
 };
 
 const addClothesDB = async (req, res) => {
-  console.log(req.body);
  
   const newCloth = new clothSchema( {
     "gender": req.body.gender,
@@ -28,4 +27,40 @@ const addClothesDB = async (req, res) => {
   }
 };
 
-module.exports = {getClothes, addClothesDB}
+const filterByMale = async (req, res) => {
+  try {
+    const data = await clothSchema.find({"gender": "M"});
+    res.json(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const filterByFemale = async (req, res) => {
+  try {
+    const data = await clothSchema.find({"gender": "F"});
+    res.json(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const filterByNew = async (req, res) => {
+  try {
+    const data = await clothSchema.find({"new": true});
+    res.json(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const filterBySale = async (req, res) => {
+  try {
+    const data = await clothSchema.find({"sale": {"begin": true}});
+    res.json(data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+module.exports = {getClothes, addClothesDB, filterByMale, filterByFemale, filterByNew, filterBySale}

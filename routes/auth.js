@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const {checkUserExist, signUp, login} = require("../controllers/auth")
-
+const { signUp, login} = require("../controllers/auth")
+const {checkUserExist} = require("../middleware/auth")
 
 router.post("/signup", checkUserExist, signUp);
 router.post("/login", checkUserExist, login);
