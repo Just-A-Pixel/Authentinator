@@ -22,3 +22,7 @@ const clothSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Clothes', clothSchema) 
+
+
+// 
+

@@ -1,12 +1,13 @@
 require("dotenv").config();
 
 const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
 const clothes = require("./routes/clothes");
 const auth = require("./routes/auth");
 const cart = require("./routes/cart")
-const mongoose = require("mongoose");
+
 const cors = require("cors")
-const app = express();
 
 app.use(cors())
 app.use(express.json());
@@ -24,13 +25,10 @@ db.on("error", (error) => {
 
 db.once("open", () => console.log("Connected to database"));
 
-
 app.get("/", (req, res) => {
   console.log(req.body);
   res.json({message: "connected"})
 });
-
-
 
 app.listen(process.env.PORT || port, () => {
   console.log(`Server listening on https://localhost:${port}`);
