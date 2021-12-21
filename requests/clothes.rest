@@ -14,7 +14,7 @@ Content-Type: application/json
 ###
 
 GET http://localhost:8080/api/clothes
-
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.YWRtaW4y.hFz0IVESRDCP0LeWFbkXdhU_djbOH--_WAkC-CTDVdo
 ###
 GET http://localhost:8080/api/clothes/male
 

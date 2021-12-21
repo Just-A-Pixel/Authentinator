@@ -1,6 +1,8 @@
 const clothSchema = require("../models/clothes");
 
 const getClothes = async (req, res) => {
+  if(req.user != 'admin2') res.send("Not allowed clothes")
+  console.log(req.user)
   try {
     const data = await clothSchema.find();
     res.json(data);

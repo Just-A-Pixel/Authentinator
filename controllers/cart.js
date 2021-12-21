@@ -11,7 +11,7 @@ const getAllItems = async (req, res) => {
 
 const getUserItems = async (req, res) => {
     try{
-        const data = await cartSchema.findById(req.params.id);
+        const data = await cartSchema.findById(req.user);
         res.json(data);
     } catch (err) {
         console.log(err)

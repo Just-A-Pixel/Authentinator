@@ -3,7 +3,7 @@ POST http://localhost:8080/api/auth/signup
 Content-Type: application/json
 
 {
-    "username": "raj",
+    "username": "delete this",
     "password": "password"
 }
 
@@ -16,3 +16,24 @@ Content-Type: application/json
     "username": "raj",
     "password": "password"
 }
+
+###
+# JWT Signup
+POST http://localhost:8080/api/auth/signupJWT
+Content-Type: application/json
+
+{
+    "name": "agent P",
+    "password": "password"
+}
+ 
+###
+# JWT Login
+POST http://localhost:8080/api/auth/loginJWT
+Content-Type: application/json
+
+{
+    "name": "agent P",
+    "password": "password"
+}
+ 

@@ -10,6 +10,10 @@ Content-Type: application/json
     "items": [{"name":"belt"}, {"name": "band"}]
 }
 
+# 
 
+###
 
+GET http://localhost:8080/api/cart/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.YWRtaW4z.WMsxJwmFBHnjFO3oQOI8ms6pHaxcFyxF_K4AkZLOVA8
 
